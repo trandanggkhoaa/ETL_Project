@@ -1,0 +1,2364 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/4/2021 11:28:51 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-AHIT5R8"
+  DTS:CreatorName="DESKTOP-AHIT5R8\khoa"
+  DTS:DTSID="{6958CB24-E49A-4223-9F47-0AA6E5D5D80A}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{9728F7CB-1D3A-4037-A887-2A470F9FC385}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-AHIT5R8\SQLEXPRESS.DALT_MetaData]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F6A9FD81-E84F-406B-86C6-41A9FA7D3324}"
+      DTS:ObjectName="DESKTOP-AHIT5R8\SQLEXPRESS.DALT_MetaData">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-AHIT5R8\SQLEXPRESS;Initial Catalog=DALT_MetaData;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-AHIT5R8\SQLEXPRESS.DALT_Stage]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{B617FDEA-6F20-49E3-8E1C-20907136B82C}"
+      DTS:ObjectName="DESKTOP-AHIT5R8\SQLEXPRESS.DALT_Stage">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-AHIT5R8\SQLEXPRESS;Initial Catalog=DALT_Stage;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-AHIT5R8\SQLEXPRESS.Jade]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9EA24539-E328-462F-A5D4-30F696594D48}"
+      DTS:ObjectName="DESKTOP-AHIT5R8\SQLEXPRESS.Jade">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-AHIT5R8\SQLEXPRESS;Initial Catalog=Jade;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-AHIT5R8\SQLEXPRESS.Jade 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{314ABDA5-57F1-47C0-8779-690963511047}"
+      DTS:ObjectName="DESKTOP-AHIT5R8\SQLEXPRESS.Jade 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-AHIT5R8\SQLEXPRESS;Initial Catalog=Jade;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-AHIT5R8\SQLEXPRESS.Jade 2]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E7AAA2F1-B879-4962-A16B-88F526979222}"
+      DTS:ObjectName="DESKTOP-AHIT5R8\SQLEXPRESS.Jade 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-AHIT5R8\SQLEXPRESS;Initial Catalog=Jade;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{420A91A6-2936-4272-90ED-5AE3C7151E15}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="CET_CTHD">
+      <DTS:VariableValue
+        DTS:DataType="7">1/1/1900</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{35A7F8B2-743D-474E-9BFA-46537E41C4D8}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="CET_HD">
+      <DTS:VariableValue
+        DTS:DataType="7">1/1/1900</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B94C6AB0-1EDE-409F-B410-EA90B93C7B4B}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="CET_KH">
+      <DTS:VariableValue
+        DTS:DataType="7">1/1/2000</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{9CDCD44B-29DE-4F02-B724-91215ACAAE84}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LSETResult">
+      <DTS:VariableValue
+        DTS:DataType="7">1/1/2000</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{9A32C5AE-6971-4A5C-B865-2E4EC107F68E}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LSET_CTHD">
+      <DTS:VariableValue
+        DTS:DataType="7">1/1/1900</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2F2368C8-A892-4AA4-9F6E-35456AA10AFF}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LSET_HD">
+      <DTS:VariableValue
+        DTS:DataType="7">1/1/1900</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{74EE4D68-22AC-46AE-AC35-F3BC46E04838}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LSET_KH">
+      <DTS:VariableValue
+        DTS:DataType="7">1/1/1900</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6A7F8974-0FE4-437F-8DA7-69CEE8ABA28C}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Variable">
+      <DTS:VariableValue
+        DTS:DataType="8">LSET_KHJ</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Get LSET CTHD"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{403cc4e0-45bd-48aa-9c39-f666b3a01e97}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Get LSET CTHD"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F6A9FD81-E84F-406B-86C6-41A9FA7D3324}"
+          SQLTask:SqlStatementSource="SELECT CET, LSET FROM Metadata_Table WHERE DataFLow = 'ChiTietHoaDon_Jade'"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="LSET"
+            SQLTask:DtsVariableName="User::LSET_CTHD" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="CET"
+            SQLTask:DtsVariableName="User::CET_CTHD" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Get LSET HD"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{c9c42dee-50cd-4df7-bf52-6124c6a1e42f}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Get LSET HD"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F6A9FD81-E84F-406B-86C6-41A9FA7D3324}"
+          SQLTask:SqlStatementSource="SELECT CET, LSET FROM Metadata_Table WHERE DataFLow = 'HoaDon_Jade'"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="LSET"
+            SQLTask:DtsVariableName="User::LSET_HD" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="CET"
+            SQLTask:DtsVariableName="User::CET_HD" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Get LSET KH"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{93E7ABE2-2F17-45A0-A773-EF962F4990D2}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Get LSET KH"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F6A9FD81-E84F-406B-86C6-41A9FA7D3324}"
+          SQLTask:SqlStatementSource="SELECT CET, LSET FROM Metadata_Table WHERE DataFLow = 'KhachHang_Jade'"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="LSET"
+            SQLTask:DtsVariableName="User::LSET_KH" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="CET"
+            SQLTask:DtsVariableName="User::CET_KH" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Jade to Stage CTHD"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{83ea9365-4567-41f0-98d7-bd64d65bc197}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Jade to Stage CTHD"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="ChiTietHoaDon_Jade"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[KhachHang_Jade]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT*
+FROM     ChiTietHoaDon_Jade
+WHERE  (NgayTao &gt;= ?) AND (NgayTao &lt; ?) OR
+                  (NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt; ?)</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping">"Parameter0:Input",{9A32C5AE-6971-4A5C-B865-2E4EC107F68E};"Parameter1:Input",{420A91A6-2936-4272-90ED-5AE3C7151E15};"Parameter2:Input",{9A32C5AE-6971-4A5C-B865-2E4EC107F68E};"Parameter3:Input",{420A91A6-2936-4272-90ED-5AE3C7151E15};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-AHIT5R8\SQLEXPRESS.Jade]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-AHIT5R8\SQLEXPRESS.Jade]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Output].Columns[NgayTao]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Output].ExternalColumns[NgayTao]"
+                      lineageId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Output].Columns[NgayTao]"
+                      name="NgayTao"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Output].Columns[NgayCapNhat]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Output].ExternalColumns[NgayCapNhat]"
+                      lineageId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Output].Columns[NgayCapNhat]"
+                      name="NgayCapNhat"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Output].Columns[TrangThai]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Output].ExternalColumns[TrangThai]"
+                      lineageId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Output].Columns[TrangThai]"
+                      name="TrangThai"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Output].Columns[MaChiTiet]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Output].ExternalColumns[MaChiTiet]"
+                      lineageId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Output].Columns[MaChiTiet]"
+                      name="MaChiTiet"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Output].Columns[MaHD]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Output].ExternalColumns[MaHD]"
+                      length="4"
+                      lineageId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Output].Columns[MaHD]"
+                      name="MaHD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Output].Columns[MaSP]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Output].ExternalColumns[MaSP]"
+                      length="4"
+                      lineageId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Output].Columns[MaSP]"
+                      name="MaSP"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Output].ExternalColumns[NgayTao]"
+                      dataType="dbTimeStamp"
+                      name="NgayTao" />
+                    <externalMetadataColumn
+                      refId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Output].ExternalColumns[NgayCapNhat]"
+                      dataType="dbTimeStamp"
+                      name="NgayCapNhat" />
+                    <externalMetadataColumn
+                      refId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Output].ExternalColumns[TrangThai]"
+                      dataType="i4"
+                      name="TrangThai" />
+                    <externalMetadataColumn
+                      refId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Output].ExternalColumns[MaChiTiet]"
+                      dataType="i4"
+                      name="MaChiTiet" />
+                    <externalMetadataColumn
+                      refId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Output].ExternalColumns[MaHD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="MaHD" />
+                    <externalMetadataColumn
+                      refId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Output].ExternalColumns[MaSP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="MaSP" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Error Output].Columns[MaChiTiet]"
+                      dataType="i4"
+                      lineageId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Error Output].Columns[MaChiTiet]"
+                      name="MaChiTiet" />
+                    <outputColumn
+                      refId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Error Output].Columns[MaHD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Error Output].Columns[MaHD]"
+                      name="MaHD" />
+                    <outputColumn
+                      refId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Error Output].Columns[MaSP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Error Output].Columns[MaSP]"
+                      name="MaSP" />
+                    <outputColumn
+                      refId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Error Output].Columns[NgayTao]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Error Output].Columns[NgayTao]"
+                      name="NgayTao" />
+                    <outputColumn
+                      refId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Error Output].Columns[NgayCapNhat]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Error Output].Columns[NgayCapNhat]"
+                      name="NgayCapNhat" />
+                    <outputColumn
+                      refId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Error Output].Columns[TrangThai]"
+                      dataType="i4"
+                      lineageId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Error Output].Columns[TrangThai]"
+                      name="TrangThai" />
+                    <outputColumn
+                      refId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Jade to Stage CTHD\ChiTietHoaDon_Stage"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="ChiTietHoaDon_Stage"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[ChiTietHoaDon_Stage]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Jade to Stage CTHD\ChiTietHoaDon_Stage.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-AHIT5R8\SQLEXPRESS.DALT_Stage]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-AHIT5R8\SQLEXPRESS.DALT_Stage]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Jade to Stage CTHD\ChiTietHoaDon_Stage.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Jade to Stage CTHD\ChiTietHoaDon_Stage.Inputs[OLE DB Destination Input].Columns[NgayTao]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="NgayTao"
+                      externalMetadataColumnId="Package\Jade to Stage CTHD\ChiTietHoaDon_Stage.Inputs[OLE DB Destination Input].ExternalColumns[NgayTao]"
+                      lineageId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Output].Columns[NgayTao]" />
+                    <inputColumn
+                      refId="Package\Jade to Stage CTHD\ChiTietHoaDon_Stage.Inputs[OLE DB Destination Input].Columns[NgayCapNhat]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="NgayCapNhat"
+                      externalMetadataColumnId="Package\Jade to Stage CTHD\ChiTietHoaDon_Stage.Inputs[OLE DB Destination Input].ExternalColumns[NgayCapNhat]"
+                      lineageId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Output].Columns[NgayCapNhat]" />
+                    <inputColumn
+                      refId="Package\Jade to Stage CTHD\ChiTietHoaDon_Stage.Inputs[OLE DB Destination Input].Columns[TrangThai]"
+                      cachedDataType="i4"
+                      cachedName="TrangThai"
+                      externalMetadataColumnId="Package\Jade to Stage CTHD\ChiTietHoaDon_Stage.Inputs[OLE DB Destination Input].ExternalColumns[TrangThai]"
+                      lineageId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Output].Columns[TrangThai]" />
+                    <inputColumn
+                      refId="Package\Jade to Stage CTHD\ChiTietHoaDon_Stage.Inputs[OLE DB Destination Input].Columns[MaChiTiet]"
+                      cachedDataType="i4"
+                      cachedName="MaChiTiet"
+                      externalMetadataColumnId="Package\Jade to Stage CTHD\ChiTietHoaDon_Stage.Inputs[OLE DB Destination Input].ExternalColumns[MaChiTiet]"
+                      lineageId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Output].Columns[MaChiTiet]" />
+                    <inputColumn
+                      refId="Package\Jade to Stage CTHD\ChiTietHoaDon_Stage.Inputs[OLE DB Destination Input].Columns[MaHD]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="MaHD"
+                      externalMetadataColumnId="Package\Jade to Stage CTHD\ChiTietHoaDon_Stage.Inputs[OLE DB Destination Input].ExternalColumns[MaHD]"
+                      lineageId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Output].Columns[MaHD]" />
+                    <inputColumn
+                      refId="Package\Jade to Stage CTHD\ChiTietHoaDon_Stage.Inputs[OLE DB Destination Input].Columns[MaSP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="MaSP"
+                      externalMetadataColumnId="Package\Jade to Stage CTHD\ChiTietHoaDon_Stage.Inputs[OLE DB Destination Input].ExternalColumns[MaSP]"
+                      lineageId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Output].Columns[MaSP]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Jade to Stage CTHD\ChiTietHoaDon_Stage.Inputs[OLE DB Destination Input].ExternalColumns[NgayTao]"
+                      dataType="dbTimeStamp"
+                      name="NgayTao" />
+                    <externalMetadataColumn
+                      refId="Package\Jade to Stage CTHD\ChiTietHoaDon_Stage.Inputs[OLE DB Destination Input].ExternalColumns[NgayCapNhat]"
+                      dataType="dbTimeStamp"
+                      name="NgayCapNhat" />
+                    <externalMetadataColumn
+                      refId="Package\Jade to Stage CTHD\ChiTietHoaDon_Stage.Inputs[OLE DB Destination Input].ExternalColumns[TrangThai]"
+                      dataType="i4"
+                      name="TrangThai" />
+                    <externalMetadataColumn
+                      refId="Package\Jade to Stage CTHD\ChiTietHoaDon_Stage.Inputs[OLE DB Destination Input].ExternalColumns[MaChiTiet]"
+                      dataType="i4"
+                      name="MaChiTiet" />
+                    <externalMetadataColumn
+                      refId="Package\Jade to Stage CTHD\ChiTietHoaDon_Stage.Inputs[OLE DB Destination Input].ExternalColumns[MaHD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="MaHD" />
+                    <externalMetadataColumn
+                      refId="Package\Jade to Stage CTHD\ChiTietHoaDon_Stage.Inputs[OLE DB Destination Input].ExternalColumns[MaSP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="MaSP" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Jade to Stage CTHD\ChiTietHoaDon_Stage.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Jade to Stage CTHD\ChiTietHoaDon_Stage.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Jade to Stage CTHD\ChiTietHoaDon_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Jade to Stage CTHD\ChiTietHoaDon_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Jade to Stage CTHD\ChiTietHoaDon_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Jade to Stage CTHD\ChiTietHoaDon_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Jade to Stage CTHD.Paths[OLE DB Source Output]"
+              endId="Package\Jade to Stage CTHD\ChiTietHoaDon_Stage.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Jade to Stage HD"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{fc1b1310-29ca-42e2-b8a7-3ca3005d6a9d}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Jade to Stage HD"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Jade to Stage HD\HoaDon_Jade source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="HoaDon_Jade source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[HoaDon_Jade]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT *
+FROM     HoaDon_Jade
+WHERE  (NgayBan &gt;= ?) AND (NgayBan &lt; ?) OR
+                  (NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt; ?)</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping">"Parameter0:Input",{2F2368C8-A892-4AA4-9F6E-35456AA10AFF};"Parameter1:Input",{35A7F8B2-743D-474E-9BFA-46537E41C4D8};"Parameter2:Input",{2F2368C8-A892-4AA4-9F6E-35456AA10AFF};"Parameter3:Input",{35A7F8B2-743D-474E-9BFA-46537E41C4D8};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Jade to Stage HD\HoaDon_Jade source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-AHIT5R8\SQLEXPRESS.Jade]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-AHIT5R8\SQLEXPRESS.Jade]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Output].Columns[MaKH]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Output].ExternalColumns[MaKH]"
+                      length="4"
+                      lineageId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Output].Columns[MaKH]"
+                      name="MaKH"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Output].Columns[NgayCapNhat]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Output].ExternalColumns[NgayCapNhat]"
+                      lineageId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Output].Columns[NgayCapNhat]"
+                      name="NgayCapNhat"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Output].Columns[TrangThai]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Output].ExternalColumns[TrangThai]"
+                      lineageId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Output].Columns[TrangThai]"
+                      name="TrangThai"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Output].Columns[MaHD]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Output].ExternalColumns[MaHD]"
+                      length="4"
+                      lineageId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Output].Columns[MaHD]"
+                      name="MaHD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Output].Columns[MaCH]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Output].ExternalColumns[MaCH]"
+                      length="4"
+                      lineageId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Output].Columns[MaCH]"
+                      name="MaCH"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Output].Columns[NgayBan]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Output].ExternalColumns[NgayBan]"
+                      lineageId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Output].Columns[NgayBan]"
+                      name="NgayBan"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Output].ExternalColumns[MaKH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="MaKH" />
+                    <externalMetadataColumn
+                      refId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Output].ExternalColumns[NgayCapNhat]"
+                      dataType="dbTimeStamp"
+                      name="NgayCapNhat" />
+                    <externalMetadataColumn
+                      refId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Output].ExternalColumns[TrangThai]"
+                      dataType="i4"
+                      name="TrangThai" />
+                    <externalMetadataColumn
+                      refId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Output].ExternalColumns[MaHD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="MaHD" />
+                    <externalMetadataColumn
+                      refId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Output].ExternalColumns[MaCH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="MaCH" />
+                    <externalMetadataColumn
+                      refId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Output].ExternalColumns[NgayBan]"
+                      dataType="dbTimeStamp"
+                      name="NgayBan" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Error Output].Columns[MaHD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Error Output].Columns[MaHD]"
+                      name="MaHD" />
+                    <outputColumn
+                      refId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Error Output].Columns[MaKH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Error Output].Columns[MaKH]"
+                      name="MaKH" />
+                    <outputColumn
+                      refId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Error Output].Columns[MaCH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Error Output].Columns[MaCH]"
+                      name="MaCH" />
+                    <outputColumn
+                      refId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Error Output].Columns[NgayBan]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Error Output].Columns[NgayBan]"
+                      name="NgayBan" />
+                    <outputColumn
+                      refId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Error Output].Columns[NgayCapNhat]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Error Output].Columns[NgayCapNhat]"
+                      name="NgayCapNhat" />
+                    <outputColumn
+                      refId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Error Output].Columns[TrangThai]"
+                      dataType="i4"
+                      lineageId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Error Output].Columns[TrangThai]"
+                      name="TrangThai" />
+                    <outputColumn
+                      refId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Jade to Stage HD\HoaDon_Stage"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="HoaDon_Stage"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[HoaDon_Stage]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Jade to Stage HD\HoaDon_Stage.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-AHIT5R8\SQLEXPRESS.DALT_Stage]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-AHIT5R8\SQLEXPRESS.DALT_Stage]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Jade to Stage HD\HoaDon_Stage.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Jade to Stage HD\HoaDon_Stage.Inputs[OLE DB Destination Input].Columns[MaKH]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="MaKH"
+                      externalMetadataColumnId="Package\Jade to Stage HD\HoaDon_Stage.Inputs[OLE DB Destination Input].ExternalColumns[MaKH]"
+                      lineageId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Output].Columns[MaKH]" />
+                    <inputColumn
+                      refId="Package\Jade to Stage HD\HoaDon_Stage.Inputs[OLE DB Destination Input].Columns[NgayCapNhat]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="NgayCapNhat"
+                      externalMetadataColumnId="Package\Jade to Stage HD\HoaDon_Stage.Inputs[OLE DB Destination Input].ExternalColumns[NgayCapNhat]"
+                      lineageId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Output].Columns[NgayCapNhat]" />
+                    <inputColumn
+                      refId="Package\Jade to Stage HD\HoaDon_Stage.Inputs[OLE DB Destination Input].Columns[TrangThai]"
+                      cachedDataType="i4"
+                      cachedName="TrangThai"
+                      externalMetadataColumnId="Package\Jade to Stage HD\HoaDon_Stage.Inputs[OLE DB Destination Input].ExternalColumns[TrangThai]"
+                      lineageId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Output].Columns[TrangThai]" />
+                    <inputColumn
+                      refId="Package\Jade to Stage HD\HoaDon_Stage.Inputs[OLE DB Destination Input].Columns[MaHD]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="MaHD"
+                      externalMetadataColumnId="Package\Jade to Stage HD\HoaDon_Stage.Inputs[OLE DB Destination Input].ExternalColumns[MaHD]"
+                      lineageId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Output].Columns[MaHD]" />
+                    <inputColumn
+                      refId="Package\Jade to Stage HD\HoaDon_Stage.Inputs[OLE DB Destination Input].Columns[MaCH]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="MaCH"
+                      externalMetadataColumnId="Package\Jade to Stage HD\HoaDon_Stage.Inputs[OLE DB Destination Input].ExternalColumns[MaCH]"
+                      lineageId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Output].Columns[MaCH]" />
+                    <inputColumn
+                      refId="Package\Jade to Stage HD\HoaDon_Stage.Inputs[OLE DB Destination Input].Columns[NgayBan]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="NgayBan"
+                      externalMetadataColumnId="Package\Jade to Stage HD\HoaDon_Stage.Inputs[OLE DB Destination Input].ExternalColumns[NgayBan]"
+                      lineageId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Output].Columns[NgayBan]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Jade to Stage HD\HoaDon_Stage.Inputs[OLE DB Destination Input].ExternalColumns[MaKH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="MaKH" />
+                    <externalMetadataColumn
+                      refId="Package\Jade to Stage HD\HoaDon_Stage.Inputs[OLE DB Destination Input].ExternalColumns[NgayCapNhat]"
+                      dataType="dbTimeStamp"
+                      name="NgayCapNhat" />
+                    <externalMetadataColumn
+                      refId="Package\Jade to Stage HD\HoaDon_Stage.Inputs[OLE DB Destination Input].ExternalColumns[TrangThai]"
+                      dataType="i4"
+                      name="TrangThai" />
+                    <externalMetadataColumn
+                      refId="Package\Jade to Stage HD\HoaDon_Stage.Inputs[OLE DB Destination Input].ExternalColumns[MaHD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="MaHD" />
+                    <externalMetadataColumn
+                      refId="Package\Jade to Stage HD\HoaDon_Stage.Inputs[OLE DB Destination Input].ExternalColumns[MaCH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="MaCH" />
+                    <externalMetadataColumn
+                      refId="Package\Jade to Stage HD\HoaDon_Stage.Inputs[OLE DB Destination Input].ExternalColumns[NgayBan]"
+                      dataType="dbTimeStamp"
+                      name="NgayBan" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Jade to Stage HD\HoaDon_Stage.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Jade to Stage HD\HoaDon_Stage.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Jade to Stage HD\HoaDon_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Jade to Stage HD\HoaDon_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Jade to Stage HD\HoaDon_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Jade to Stage HD\HoaDon_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Jade to Stage HD.Paths[OLE DB Source Output]"
+              endId="Package\Jade to Stage HD\HoaDon_Stage.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Jade to Stage HD\HoaDon_Jade source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Jade to Stage KH"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{F2C908E2-D52E-4D1C-BB98-421A63B50430}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Jade to Stage KH"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Jade to Stage KH\KhachHang_Jade source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="KhachHang_Jade source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[KhachHang_Jade]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT *
+FROM     KhachHang_Jade
+WHERE  (NgayTao &gt;= ?) AND (NgayTao &lt; ?) OR
+                  (NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt; ?)</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping">"Parameter0:Input",{74EE4D68-22AC-46AE-AC35-F3BC46E04838};"Parameter1:Input",{B94C6AB0-1EDE-409F-B410-EA90B93C7B4B};"Parameter2:Input",{74EE4D68-22AC-46AE-AC35-F3BC46E04838};"Parameter3:Input",{B94C6AB0-1EDE-409F-B410-EA90B93C7B4B};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Jade to Stage KH\KhachHang_Jade source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-AHIT5R8\SQLEXPRESS.Jade]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-AHIT5R8\SQLEXPRESS.Jade]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Output].Columns[MaKH]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Output].ExternalColumns[MaKH]"
+                      length="4"
+                      lineageId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Output].Columns[MaKH]"
+                      name="MaKH"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Output].Columns[TenKH]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Output].ExternalColumns[TenKH]"
+                      length="50"
+                      lineageId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Output].Columns[TenKH]"
+                      name="TenKH"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Output].Columns[DiaChi]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Output].ExternalColumns[DiaChi]"
+                      length="50"
+                      lineageId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Output].Columns[DiaChi]"
+                      name="DiaChi"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Output].Columns[NgayTao]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Output].ExternalColumns[NgayTao]"
+                      lineageId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Output].Columns[NgayTao]"
+                      name="NgayTao"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Output].Columns[NgayCapNhat]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Output].ExternalColumns[NgayCapNhat]"
+                      lineageId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Output].Columns[NgayCapNhat]"
+                      name="NgayCapNhat"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Output].Columns[TrangThai]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Output].ExternalColumns[TrangThai]"
+                      lineageId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Output].Columns[TrangThai]"
+                      name="TrangThai"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Output].Columns[GioiTinh]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Output].ExternalColumns[GioiTinh]"
+                      length="1"
+                      lineageId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Output].Columns[GioiTinh]"
+                      name="GioiTinh"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Output].Columns[SoThich]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Output].ExternalColumns[SoThich]"
+                      length="30"
+                      lineageId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Output].Columns[SoThich]"
+                      name="SoThich"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Output].Columns[NgheNghiep]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Output].ExternalColumns[NgheNghiep]"
+                      length="30"
+                      lineageId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Output].Columns[NgheNghiep]"
+                      name="NgheNghiep"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Output].ExternalColumns[MaKH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="MaKH" />
+                    <externalMetadataColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Output].ExternalColumns[TenKH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TenKH" />
+                    <externalMetadataColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Output].ExternalColumns[DiaChi]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DiaChi" />
+                    <externalMetadataColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Output].ExternalColumns[NgayTao]"
+                      dataType="dbTimeStamp"
+                      name="NgayTao" />
+                    <externalMetadataColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Output].ExternalColumns[NgayCapNhat]"
+                      dataType="dbTimeStamp"
+                      name="NgayCapNhat" />
+                    <externalMetadataColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Output].ExternalColumns[TrangThai]"
+                      dataType="i4"
+                      name="TrangThai" />
+                    <externalMetadataColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Output].ExternalColumns[GioiTinh]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="GioiTinh" />
+                    <externalMetadataColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Output].ExternalColumns[SoThich]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="SoThich" />
+                    <externalMetadataColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Output].ExternalColumns[NgheNghiep]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="NgheNghiep" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Error Output].Columns[MaKH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Error Output].Columns[MaKH]"
+                      name="MaKH" />
+                    <outputColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Error Output].Columns[TenKH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Error Output].Columns[TenKH]"
+                      name="TenKH" />
+                    <outputColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Error Output].Columns[DiaChi]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Error Output].Columns[DiaChi]"
+                      name="DiaChi" />
+                    <outputColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Error Output].Columns[NgayTao]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Error Output].Columns[NgayTao]"
+                      name="NgayTao" />
+                    <outputColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Error Output].Columns[NgayCapNhat]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Error Output].Columns[NgayCapNhat]"
+                      name="NgayCapNhat" />
+                    <outputColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Error Output].Columns[TrangThai]"
+                      dataType="i4"
+                      lineageId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Error Output].Columns[TrangThai]"
+                      name="TrangThai" />
+                    <outputColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Error Output].Columns[GioiTinh]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Error Output].Columns[GioiTinh]"
+                      name="GioiTinh" />
+                    <outputColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Error Output].Columns[SoThich]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Error Output].Columns[SoThich]"
+                      name="SoThich" />
+                    <outputColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Error Output].Columns[NgheNghiep]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Error Output].Columns[NgheNghiep]"
+                      name="NgheNghiep" />
+                    <outputColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Jade to Stage KH\KhachHang_Stage"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="KhachHang_Stage"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[KhachHang_Stage]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Jade to Stage KH\KhachHang_Stage.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-AHIT5R8\SQLEXPRESS.DALT_Stage]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-AHIT5R8\SQLEXPRESS.DALT_Stage]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Jade to Stage KH\KhachHang_Stage.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Stage.Inputs[OLE DB Destination Input].Columns[MaKH]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="MaKH"
+                      externalMetadataColumnId="Package\Jade to Stage KH\KhachHang_Stage.Inputs[OLE DB Destination Input].ExternalColumns[MaKH]"
+                      lineageId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Output].Columns[MaKH]" />
+                    <inputColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Stage.Inputs[OLE DB Destination Input].Columns[TenKH]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TenKH"
+                      externalMetadataColumnId="Package\Jade to Stage KH\KhachHang_Stage.Inputs[OLE DB Destination Input].ExternalColumns[TenKH]"
+                      lineageId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Output].Columns[TenKH]" />
+                    <inputColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Stage.Inputs[OLE DB Destination Input].Columns[DiaChi]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DiaChi"
+                      externalMetadataColumnId="Package\Jade to Stage KH\KhachHang_Stage.Inputs[OLE DB Destination Input].ExternalColumns[DiaChi]"
+                      lineageId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Output].Columns[DiaChi]" />
+                    <inputColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Stage.Inputs[OLE DB Destination Input].Columns[NgayTao]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="NgayTao"
+                      externalMetadataColumnId="Package\Jade to Stage KH\KhachHang_Stage.Inputs[OLE DB Destination Input].ExternalColumns[NgayTao]"
+                      lineageId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Output].Columns[NgayTao]" />
+                    <inputColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Stage.Inputs[OLE DB Destination Input].Columns[NgayCapNhat]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="NgayCapNhat"
+                      externalMetadataColumnId="Package\Jade to Stage KH\KhachHang_Stage.Inputs[OLE DB Destination Input].ExternalColumns[NgayCapNhat]"
+                      lineageId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Output].Columns[NgayCapNhat]" />
+                    <inputColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Stage.Inputs[OLE DB Destination Input].Columns[TrangThai]"
+                      cachedDataType="i4"
+                      cachedName="TrangThai"
+                      externalMetadataColumnId="Package\Jade to Stage KH\KhachHang_Stage.Inputs[OLE DB Destination Input].ExternalColumns[TrangThai]"
+                      lineageId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Output].Columns[TrangThai]" />
+                    <inputColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Stage.Inputs[OLE DB Destination Input].Columns[GioiTinh]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="GioiTinh"
+                      externalMetadataColumnId="Package\Jade to Stage KH\KhachHang_Stage.Inputs[OLE DB Destination Input].ExternalColumns[GioiTinh]"
+                      lineageId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Output].Columns[GioiTinh]" />
+                    <inputColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Stage.Inputs[OLE DB Destination Input].Columns[SoThich]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="SoThich"
+                      externalMetadataColumnId="Package\Jade to Stage KH\KhachHang_Stage.Inputs[OLE DB Destination Input].ExternalColumns[SoThich]"
+                      lineageId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Output].Columns[SoThich]" />
+                    <inputColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Stage.Inputs[OLE DB Destination Input].Columns[NgheNghiep]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="NgheNghiep"
+                      externalMetadataColumnId="Package\Jade to Stage KH\KhachHang_Stage.Inputs[OLE DB Destination Input].ExternalColumns[NgheNghiep]"
+                      lineageId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Output].Columns[NgheNghiep]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Stage.Inputs[OLE DB Destination Input].ExternalColumns[MaKH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="MaKH" />
+                    <externalMetadataColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Stage.Inputs[OLE DB Destination Input].ExternalColumns[TenKH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TenKH" />
+                    <externalMetadataColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Stage.Inputs[OLE DB Destination Input].ExternalColumns[DiaChi]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DiaChi" />
+                    <externalMetadataColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Stage.Inputs[OLE DB Destination Input].ExternalColumns[NgayTao]"
+                      dataType="dbTimeStamp"
+                      name="NgayTao" />
+                    <externalMetadataColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Stage.Inputs[OLE DB Destination Input].ExternalColumns[NgayCapNhat]"
+                      dataType="dbTimeStamp"
+                      name="NgayCapNhat" />
+                    <externalMetadataColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Stage.Inputs[OLE DB Destination Input].ExternalColumns[TrangThai]"
+                      dataType="i4"
+                      name="TrangThai" />
+                    <externalMetadataColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Stage.Inputs[OLE DB Destination Input].ExternalColumns[GioiTinh]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="GioiTinh" />
+                    <externalMetadataColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Stage.Inputs[OLE DB Destination Input].ExternalColumns[SoThich]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="SoThich" />
+                    <externalMetadataColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Stage.Inputs[OLE DB Destination Input].ExternalColumns[NgheNghiep]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="NgheNghiep" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Jade to Stage KH\KhachHang_Stage.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Jade to Stage KH\KhachHang_Stage.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Jade to Stage KH\KhachHang_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Jade to Stage KH\KhachHang_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Jade to Stage KH\KhachHang_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Jade to Stage KH.Paths[OLE DB Source Output]"
+              endId="Package\Jade to Stage KH\KhachHang_Stage.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Jade to Stage KH\KhachHang_Jade source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Set CET CTHD"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{18e2ed15-a700-4c29-9014-1dbfe0c0662d}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Set CET CTHD"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F6A9FD81-E84F-406B-86C6-41A9FA7D3324}"
+          SQLTask:SqlStatementSource="UPDATE Metadata_Table&#xA;SET CET = GETDATE()&#xA;WHERE DataFLow ='ChiTietHoaDon_Jage'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Set CET HD"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{4536bc02-fa2c-4c4f-90c9-f69289ad55cf}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Set CET HD"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F6A9FD81-E84F-406B-86C6-41A9FA7D3324}"
+          SQLTask:SqlStatementSource="UPDATE Metadata_Table&#xA;SET CET = GETDATE()&#xA;WHERE DataFLow ='HoaDon_Jage'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Set CET KH"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{C2E7C204-9750-4CF5-B8DC-45E90C694028}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Set CET KH"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F6A9FD81-E84F-406B-86C6-41A9FA7D3324}"
+          SQLTask:SqlStatementSource="UPDATE Metadata_Table&#xA;SET CET = GETDATE()&#xA;WHERE DataFLow ='KhachHang_Jage'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Set LSET CTHD"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{0f1f9653-dec7-4a27-a267-0118904423a4}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Set LSET CTHD"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F6A9FD81-E84F-406B-86C6-41A9FA7D3324}"
+          SQLTask:SqlStatementSource="UPDATE MetaData_Table SET LSET = CET WHERE DataFlow = 'ChiTietHoaDon_Jade'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Set LSET HD"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{55a0486f-00bf-4d17-9190-ce200fdd72bf}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Set LSET HD"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F6A9FD81-E84F-406B-86C6-41A9FA7D3324}"
+          SQLTask:SqlStatementSource="UPDATE MetaData_Table SET LSET = CET WHERE DataFlow = 'HoaDon_Jade'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Set LSET KH"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{12D8A9C5-8E2E-4520-8BB2-4D0345D945E7}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Set LSET KH"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F6A9FD81-E84F-406B-86C6-41A9FA7D3324}"
+          SQLTask:SqlStatementSource="UPDATE MetaData_Table SET LSET = CET WHERE DataFlow = 'KhachHang_Jade'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate table CTHD"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{3c52ccc8-e508-43c5-9ce8-0e7eae5c5e44}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate table CTHD"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{B617FDEA-6F20-49E3-8E1C-20907136B82C}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE ChiTietHoaDon_Stage" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate table HD"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{c78e322c-b740-448a-8d91-d6497bce8ec1}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate table HD"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{B617FDEA-6F20-49E3-8E1C-20907136B82C}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE HoaDon_Stage" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate table KH"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{FF796028-3AE8-4224-87CB-D49033144B3A}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate table KH"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{B617FDEA-6F20-49E3-8E1C-20907136B82C}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE KhachHang_Stage" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{3F175B87-4667-4358-BC0E-9290D7342C45}"
+      DTS:From="Package\Set CET KH"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Truncate table KH" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{A81B4592-1675-4A01-9923-BA263000CBFF}"
+      DTS:From="Package\Truncate table KH"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Get LSET KH" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{cb21b1a1-df66-4d22-bbd9-2ac122f93b10}"
+      DTS:From="Package\Truncate table HD"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1 1"
+      DTS:To="Package\Get LSET HD" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{20bf1840-691a-43d4-bedd-8e53b0173084}"
+      DTS:From="Package\Truncate table CTHD"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1 2"
+      DTS:To="Package\Get LSET CTHD" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{AC60628D-C73A-4D7A-886E-CECDAF24163C}"
+      DTS:From="Package\Get LSET KH"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Jade to Stage KH" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{9742cbb2-a445-426b-87e1-84c094ef0e7d}"
+      DTS:From="Package\Get LSET HD"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2 1"
+      DTS:To="Package\Jade to Stage HD" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{d4d22607-ab4c-4f9c-b509-eb806de3c5fd}"
+      DTS:From="Package\Get LSET CTHD"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2 2"
+      DTS:To="Package\Jade to Stage CTHD" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{6A8469F6-F31E-46A7-8140-F120051420FE}"
+      DTS:From="Package\Jade to Stage KH"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Set LSET KH" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{93d8dc0b-3d94-4b7f-a57c-92c7a5793852}"
+      DTS:From="Package\Jade to Stage HD"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3 1"
+      DTS:To="Package\Set LSET HD" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{3e9c8edc-b860-479e-99bb-b4eae4cd4783}"
+      DTS:From="Package\Jade to Stage CTHD"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3 2"
+      DTS:To="Package\Set LSET CTHD" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{1810970c-76da-4e24-84be-b43d803b1fb8}"
+      DTS:From="Package\Set CET HD"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Truncate table HD" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{c5955167-aae7-4d74-8424-f62e6302627a}"
+      DTS:From="Package\Set CET CTHD"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\Truncate table CTHD" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\Get LSET CTHD"
+          TopLeft="663.966648421023,239.200001900991" />
+        <NodeLayout
+          Size="141.6,41.6"
+          Id="Package\Get LSET HD"
+          TopLeft="451.666648719046,240.9333352481" />
+        <NodeLayout
+          Size="140.8,41.6"
+          Id="Package\Get LSET KH"
+          TopLeft="183.333326048322,228.800001818339" />
+        <NodeLayout
+          Size="173.6,41.6"
+          Id="Package\Jade to Stage CTHD"
+          TopLeft="659.799981919924,336.266669339072" />
+        <NodeLayout
+          Size="160,41.6"
+          Id="Package\Jade to Stage HD"
+          TopLeft="436.666649315093,321.53333588865" />
+        <NodeLayout
+          Size="159.2,41.6"
+          Id="Package\Jade to Stage KH"
+          TopLeft="168.333326644368,309.40000245889" />
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\Set CET CTHD"
+          TopLeft="671.466648122999,47.6666670454873" />
+        <NodeLayout
+          Size="135.2,41.6"
+          Id="Package\Set CET HD"
+          TopLeft="454.999981919925,49.4000003925959" />
+        <NodeLayout
+          Size="134.4,41.6"
+          Id="Package\Set CET KH"
+          TopLeft="191.666659050518,47.6666670454873" />
+        <NodeLayout
+          Size="154.4,41.6"
+          Id="Package\Set LSET CTHD"
+          TopLeft="668.13331492212,411.666669938299" />
+        <NodeLayout
+          Size="140.8,41.6"
+          Id="Package\Set LSET HD"
+          TopLeft="448.333315518168,407.333336570528" />
+        <NodeLayout
+          Size="140,41.6"
+          Id="Package\Set LSET KH"
+          TopLeft="179.999992847443,395.200003140768" />
+        <NodeLayout
+          Size="176.8,41.6"
+          Id="Package\Truncate table CTHD"
+          TopLeft="654.799982118606,139.533334442245" />
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Truncate table HD"
+          TopLeft="439.99998251597,141.266667789353" />
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Truncate table KH"
+          TopLeft="174.999993046124,139.533334442245" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="257.533326048321,89.2666670454873">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.2666673967574"
+              Start="0,0"
+              End="0,42.7666673967574">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.7666673967574" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="254.966659547223,181.133334442245">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.6666673760942"
+              Start="0,0"
+              End="0,40.1666673760942">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.1666673760942" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1 1]"
+          TopLeft="521.833315617508,182.866667789353">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58.0666674587468"
+              Start="0,0"
+              End="0,50.5666674587468">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.5666674587468" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1 2]"
+          TopLeft="742.383315269814,181.133334442245">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58.0666674587458"
+              Start="0,0"
+              End="0,50.5666674587458">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.5666674587458" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="250.833326346345,270.400001818339">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.000000640551"
+              Start="0,0"
+              End="0,31.500000640551">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.500000640551" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2 1]"
+          TopLeft="519.566649017069,282.5333352481">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.00000064055"
+              Start="0,0"
+              End="0,31.50000064055">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.50000064055" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2 2]"
+          TopLeft="744.083315170474,280.800001900991">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55.466667438081"
+              Start="0,0"
+              End="0,47.966667438081">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.966667438081" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="248.966659745905,351.00000245889">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.200000681878"
+              Start="0,0"
+              End="0,36.700000681878">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.700000681878" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3 1]"
+          TopLeft="517.699982416631,363.13333588865">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.200000681878"
+              Start="0,0"
+              End="0,36.700000681878">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.700000681878" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3 2]"
+          TopLeft="745.966648421022,377.866669339072">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33.800000599227"
+              Start="0,0"
+              End="0,26.300000599227">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.300000599227" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="521.899982217948,91.0000003925959">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.2666673967573"
+              Start="0,0"
+              End="0,42.7666673967573">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.7666673967573" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="744.733315120802,89.2666670454873">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.2666673967574"
+              Start="0,0"
+              End="0,42.7666673967574">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.7666673967574" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Jade to Stage CTHD">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="177.6,41.6"
+          Id="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade"
+          TopLeft="191.666659050518,68.4666672107908" />
+        <NodeLayout
+          Size="182.4,41.6"
+          Id="Package\Jade to Stage CTHD\ChiTietHoaDon_Stage"
+          TopLeft="184.99999264876,183.733334793514" />
+        <EdgeLayout
+          Id="Package\Jade to Stage CTHD.Paths[OLE DB Source Output]"
+          TopLeft="278.333325849639,110.066667210791">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,73.6666675827232"
+              Start="0,0"
+              End="0,66.1666675827232">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,66.1666675827232" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Jade to Stage CTHD\ChiTietHoaDon_Jade">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Jade to Stage CTHD\ChiTietHoaDon_Stage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Jade to Stage HD">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="179.2,41.6"
+          Id="Package\Jade to Stage HD\HoaDon_Jade source"
+          TopLeft="191.666659050518,68.4666672107908" />
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\Jade to Stage HD\HoaDon_Stage"
+          TopLeft="206.99999264876,195.733334793514" />
+        <EdgeLayout
+          Id="Package\Jade to Stage HD.Paths[OLE DB Source Output]"
+          TopLeft="281.533325849639,110.066667210791">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,85.6666675827232"
+              Start="0,0"
+              End="0,78.1666675827232">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,78.1666675827232" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Jade to Stage HD\HoaDon_Jade source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Jade to Stage HD\HoaDon_Stage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Jade to Stage KH">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="165.6,41.6"
+          Id="Package\Jade to Stage KH\KhachHang_Stage"
+          TopLeft="211.666658255789,184.600001467068" />
+        <NodeLayout
+          Size="195.2,41.6"
+          Id="Package\Jade to Stage KH\KhachHang_Jade source"
+          TopLeft="191.666659050518,68.4666672107908" />
+        <EdgeLayout
+          Id="Package\Jade to Stage KH.Paths[OLE DB Source Output]"
+          TopLeft="291.866658653153,110.066667210791">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,74.5333342562775"
+              Start="0,0"
+              End="0,67.0333342562775">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,67.0333342562775" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Jade to Stage KH\KhachHang_Jade source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Jade to Stage KH\KhachHang_Stage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
