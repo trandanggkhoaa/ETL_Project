@@ -11,20 +11,20 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{C4BE7A52-4B61-4A7D-8D62-4D2DD6D6765A}">
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{AA921805-B026-49FC-9823-FAC8894488F6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Source to stage"
+      DTS:refId="Package\Execute Package Task"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
-      DTS:DTSID="{E56AE0F6-D73D-40D2-AAD9-D21708603730}"
+      DTS:DTSID="{0A5A3C96-3EB6-4DE7-8097-704D77767F76}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Source to stage"
+      DTS:ObjectName="Execute Package Task"
       DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -47,9 +47,9 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="151.2,41.6"
-          Id="Package\Source to stage"
-          TopLeft="207.499991754691,98.8000007851919" />
+          Size="182.4,41.6"
+          Id="Package\Execute Package Task"
+          TopLeft="272.857147503872,84.1176482385419" />
       </GraphLayout>
     </LayoutInfo>
   </Package>

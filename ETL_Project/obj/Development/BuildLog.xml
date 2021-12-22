@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>ETL_Project</Name>
-    <LastWriteTime>2021-12-22T06:53:11.9513953Z</LastWriteTime>
+    <LastWriteTime>2021-12-22T08:00:36.8346784Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -49,6 +49,11 @@
     <ProjectBuildItemInfo>
       <Name>HoaDon_StageToNDS.dtsx</Name>
       <LastWriteTime>2021-12-22T06:53:11.897546Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>ChiTietHoaDon_StageToNDS.dtsx</Name>
+      <LastWriteTime>2021-12-22T08:01:00.3013662Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
