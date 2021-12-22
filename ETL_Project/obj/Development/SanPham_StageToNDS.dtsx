@@ -1,0 +1,1581 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/22/2021 1:17:30 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-AHIT5R8"
+  DTS:CreatorName="DESKTOP-AHIT5R8\khoa"
+  DTS:DTSID="{E35C9FDC-1510-499D-9A7E-FDCB9FC0EE4F}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{E6F958AF-D944-47B2-B2E9-79525A878D0F}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.NDS_DALT]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{DAA1976F-63C6-477B-87DA-300566453C57}"
+      DTS:ObjectName="LocalHost.NDS_DALT">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=NDS_DALT;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.Stage_DALT]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{58319493-14C0-40EC-A6BB-3BB374BFC533}"
+      DTS:ObjectName="LocalHost.Stage_DALT">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=Stage_DALT;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{F6D0B216-2FE0-4ED9-9051-C5C2017C8931}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\Lookup"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select MaSP from SanPham where Nguon=3</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select MaSP from SanPham where Nguon=3) [refTable]
+where [refTable].[MaSP] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="MaSP" dataType="DT_STR" length="4" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Output].Columns[MaSP]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.NDS_DALT]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.NDS_DALT]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Lookup.Inputs[Lookup Input].Columns[MaSP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="MaSP"
+                      lineageId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Output].Columns[MaSP]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">MaSP</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Lookup.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Data Flow Task\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Lookup.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Data Flow Task\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Lookup.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Data Flow Task\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Lookup LoaiSanPham"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup LoaiSanPham"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select LoaiSPID, MaLoaiSP from LoaiSanPham where Nguon=1</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select LoaiSPID, MaLoaiSP from LoaiSanPham where Nguon=1) [refTable]
+where [refTable].[MaLoaiSP] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="LoaiSPID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MaLoaiSP" dataType="DT_STR" length="4" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Output].Columns[LoaiSP]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Lookup LoaiSanPham.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.NDS_DALT]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.NDS_DALT]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Lookup LoaiSanPham.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Lookup LoaiSanPham.Inputs[Lookup Input].Columns[LoaiSP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="LoaiSP"
+                      lineageId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Output].Columns[LoaiSP]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">MaLoaiSP</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Lookup LoaiSanPham.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Data Flow Task\Lookup LoaiSanPham.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lookup LoaiSanPham.Outputs[Lookup Match Output].Columns[ID LoaiSanPham trong NDS]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Data Flow Task\Lookup LoaiSanPham.Outputs[Lookup Match Output].Columns[ID LoaiSanPham trong NDS]"
+                      name="ID LoaiSanPham trong NDS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">LoaiSPID</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Lookup LoaiSanPham.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Data Flow Task\Lookup LoaiSanPham.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Lookup LoaiSanPham.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Data Flow Task\Lookup LoaiSanPham.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lookup LoaiSanPham.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Lookup LoaiSanPham.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lookup LoaiSanPham.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Lookup LoaiSanPham.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update SanPham set  TenSP=? ,GiaSP=? , LoaiSP=? ,TrangThai=? ,NgayCapNhat=? where Nguon=? and MaSP=?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.NDS_DALT]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.NDS_DALT]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[TenSP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TenSP"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Output].Columns[TenSP]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[GiaSP]"
+                      cachedDataType="i4"
+                      cachedName="GiaSP"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Output].Columns[GiaSP]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[ID LoaiSanPham trong NDS]"
+                      cachedDataType="i4"
+                      cachedName="ID LoaiSanPham trong NDS"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Data Flow Task\Lookup LoaiSanPham.Outputs[Lookup Match Output].Columns[ID LoaiSanPham trong NDS]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[TrangThai]"
+                      cachedDataType="i4"
+                      cachedName="TrangThai"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Output].Columns[TrangThai]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[NgayCapNhat]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="NgayCapNhat"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      lineageId="Package\Data Flow Task\Them NgayCapNhat.Outputs[Derived Column Output].Columns[NgayCapNhat]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[Nguon]"
+                      cachedDataType="i4"
+                      cachedName="Nguon"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      lineageId="Package\Data Flow Task\Them Nguon.Outputs[Derived Column Output].Columns[Nguon]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[MaSP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="MaSP"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      lineageId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Output].Columns[MaSP]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="i4"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      dataType="i4"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      dataType="dbTimeStamp"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      dataType="i4"
+                      name="Param_5">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="Param_6">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[SanPham]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.NDS_DALT]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.NDS_DALT]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TrangThai]"
+                      cachedDataType="i4"
+                      cachedName="TrangThai"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TrangThai]"
+                      lineageId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Output].Columns[TrangThai]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MaSP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="MaSP"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MaSP]"
+                      lineageId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Output].Columns[MaSP]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TenSP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TenSP"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TenSP]"
+                      lineageId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Output].Columns[TenSP]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[GiaSP]"
+                      cachedDataType="i4"
+                      cachedName="GiaSP"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GiaSP]"
+                      lineageId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Output].Columns[GiaSP]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Nguon]"
+                      cachedDataType="i4"
+                      cachedName="Nguon"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Nguon]"
+                      lineageId="Package\Data Flow Task\Them Nguon.Outputs[Derived Column Output].Columns[Nguon]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[NgayCapNhat]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="NgayCapNhat"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NgayCapNhat]"
+                      lineageId="Package\Data Flow Task\Them NgayTao, NgayCapNhat.Outputs[Derived Column Output].Columns[NgayCapNhat]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[NgayTao]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="NgayTao"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NgayTao]"
+                      lineageId="Package\Data Flow Task\Them NgayTao, NgayCapNhat.Outputs[Derived Column Output].Columns[NgayTao]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ID LoaiSanPham trong NDS]"
+                      cachedDataType="i4"
+                      cachedName="ID LoaiSanPham trong NDS"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LoaiSP]"
+                      lineageId="Package\Data Flow Task\Lookup LoaiSanPham.Outputs[Lookup Match Output].Columns[ID LoaiSanPham trong NDS]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SPID]"
+                      dataType="i4"
+                      name="SPID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MaSP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="MaSP" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TenSP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TenSP" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GiaSP]"
+                      dataType="i4"
+                      name="GiaSP" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LoaiSP]"
+                      dataType="i4"
+                      name="LoaiSP" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Nguon]"
+                      dataType="i4"
+                      name="Nguon" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TrangThai]"
+                      dataType="i4"
+                      name="TrangThai" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NgayTao]"
+                      dataType="dbTimeStamp"
+                      name="NgayTao" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NgayCapNhat]"
+                      dataType="dbTimeStamp"
+                      name="NgayCapNhat" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\SanPham_Stage"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="SanPham_Stage"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[SanPham_Jupiter_Stage]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\SanPham_Stage.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.Stage_DALT]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.Stage_DALT]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Output].Columns[NgayTao]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Output].ExternalColumns[NgayTao]"
+                      lineageId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Output].Columns[NgayTao]"
+                      name="NgayTao"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Output].Columns[TrangThai]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Output].ExternalColumns[TrangThai]"
+                      lineageId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Output].Columns[TrangThai]"
+                      name="TrangThai"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Output].Columns[MaSP]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Output].ExternalColumns[MaSP]"
+                      length="4"
+                      lineageId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Output].Columns[MaSP]"
+                      name="MaSP"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Output].Columns[TenSP]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Output].ExternalColumns[TenSP]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Output].Columns[TenSP]"
+                      name="TenSP"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Output].Columns[GiaSP]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Output].ExternalColumns[GiaSP]"
+                      lineageId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Output].Columns[GiaSP]"
+                      name="GiaSP"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Output].Columns[LoaiSP]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Output].ExternalColumns[LoaiSP]"
+                      length="4"
+                      lineageId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Output].Columns[LoaiSP]"
+                      name="LoaiSP"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Output].Columns[NgayCapNhap]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Output].ExternalColumns[NgayCapNhap]"
+                      lineageId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Output].Columns[NgayCapNhap]"
+                      name="NgayCapNhap"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Output].ExternalColumns[NgayTao]"
+                      dataType="dbTimeStamp"
+                      name="NgayTao" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Output].ExternalColumns[TrangThai]"
+                      dataType="i4"
+                      name="TrangThai" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Output].ExternalColumns[MaSP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="MaSP" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Output].ExternalColumns[TenSP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TenSP" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Output].ExternalColumns[GiaSP]"
+                      dataType="i4"
+                      name="GiaSP" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Output].ExternalColumns[LoaiSP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="LoaiSP" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Output].ExternalColumns[NgayCapNhap]"
+                      dataType="dbTimeStamp"
+                      name="NgayCapNhap" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Error Output].Columns[NgayTao]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Error Output].Columns[NgayTao]"
+                      name="NgayTao" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Error Output].Columns[TrangThai]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Error Output].Columns[TrangThai]"
+                      name="TrangThai" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Error Output].Columns[MaSP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Error Output].Columns[MaSP]"
+                      name="MaSP" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Error Output].Columns[TenSP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Error Output].Columns[TenSP]"
+                      name="TenSP" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Error Output].Columns[GiaSP]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Error Output].Columns[GiaSP]"
+                      name="GiaSP" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Error Output].Columns[LoaiSP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Error Output].Columns[LoaiSP]"
+                      name="LoaiSP" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Error Output].Columns[NgayCapNhap]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Error Output].Columns[NgayCapNhap]"
+                      name="NgayCapNhap" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Them NgayCapNhat"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Them NgayCapNhat"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Them NgayCapNhat.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Them NgayCapNhat.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Task\Them NgayCapNhat.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Them NgayCapNhat.Outputs[Derived Column Output].Columns[NgayCapNhat]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Them NgayCapNhat.Outputs[Derived Column Output].Columns[NgayCapNhat]"
+                      name="NgayCapNhat"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Them NgayCapNhat.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Task\Them NgayCapNhat.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Them NgayCapNhat.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Them NgayCapNhat.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Them NgayCapNhat.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Them NgayCapNhat.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Them NgayTao, NgayCapNhat"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Them NgayTao, NgayCapNhat"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Them NgayTao, NgayCapNhat.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Them NgayTao, NgayCapNhat.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Task\Them NgayTao, NgayCapNhat.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Them NgayTao, NgayCapNhat.Outputs[Derived Column Output].Columns[NgayTao]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Them NgayTao, NgayCapNhat.Outputs[Derived Column Output].Columns[NgayTao]"
+                      name="NgayTao"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Them NgayTao, NgayCapNhat.Outputs[Derived Column Output].Columns[NgayCapNhat]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Them NgayTao, NgayCapNhat.Outputs[Derived Column Output].Columns[NgayCapNhat]"
+                      name="NgayCapNhat"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Them NgayTao, NgayCapNhat.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Task\Them NgayTao, NgayCapNhat.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Them NgayTao, NgayCapNhat.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Them NgayTao, NgayCapNhat.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Them NgayTao, NgayCapNhat.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Them NgayTao, NgayCapNhat.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Them Nguon"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Them Nguon"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Them Nguon.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Them Nguon.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Task\Them Nguon.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Them Nguon.Outputs[Derived Column Output].Columns[Nguon]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Them Nguon.Outputs[Derived Column Output].Columns[Nguon]"
+                      name="Nguon"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">1</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">1</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Them Nguon.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Task\Them Nguon.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Them Nguon.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Them Nguon.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Them Nguon.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Them Nguon.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[Derived Column Output]"
+              endId="Package\Data Flow Task\Lookup LoaiSanPham.Inputs[Lookup Input]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task\Them Nguon.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Derived Column Output1]"
+              endId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task\Them NgayCapNhat.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Derived Column Output2]"
+              endId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task\Them NgayTao, NgayCapNhat.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Lookup Match Output]"
+              endId="Package\Data Flow Task\Lookup.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Data Flow Task\Lookup LoaiSanPham.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Lookup Match Output1]"
+              endId="Package\Data Flow Task\Them NgayCapNhat.Inputs[Derived Column Input]"
+              name="Lookup Match Output"
+              startId="Package\Data Flow Task\Lookup.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Lookup No Match Output]"
+              endId="Package\Data Flow Task\Them NgayTao, NgayCapNhat.Inputs[Derived Column Input]"
+              name="Lookup No Match Output"
+              startId="Package\Data Flow Task\Lookup.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task\Them Nguon.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\SanPham_Stage.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Data Flow Task"
+          TopLeft="257.142861521974,61.9411773392899" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="154.4,41.6"
+          Id="Package\Data Flow Task\SanPham_Stage"
+          TopLeft="275.714290409672,24.4705885784849" />
+        <NodeLayout
+          Size="139.2,41.6"
+          Id="Package\Data Flow Task\Them Nguon"
+          TopLeft="281.428576221272,97.1176484208619" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="351.971433315472,66.0705885784849">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.047059842377"
+              Start="0,0"
+              End="0,23.547059842377">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.547059842377" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="178.4,41.6"
+          Id="Package\Data Flow Task\Lookup LoaiSanPham"
+          TopLeft="262.142861607124,180.470590766326" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="351.185718914198,138.717648420862">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41.7529423454642"
+              Start="0,0"
+              End="0,34.2529423454642">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.2529423454642" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="112.8,41.6"
+          Id="Package\Data Flow Task\Lookup"
+          TopLeft="297.14286220317,251.588238822548" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Lookup Match Output]"
+          TopLeft="352.442861905147,222.070590766326">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.5176480562215"
+              Start="0,0"
+              End="0,22.0176480562215">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.0176480562215" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,5.20413652811077,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="172.8,41.6"
+          Id="Package\Data Flow Task\Them NgayCapNhat"
+          TopLeft="115.714287684888,299.76471008644" />
+        <NodeLayout
+          Size="220.8,41.6"
+          Id="Package\Data Flow Task\Them NgayTao, NgayCapNhat"
+          TopLeft="417.142864246758,306.647063124139" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Lookup Match Output1]"
+          TopLeft="297.14286220317,272.388238822548">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-95.0285745182818,27.3764712638923"
+              Start="0,0"
+              End="-95.0285745182818,19.8764712638923">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-91.0285745182818,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-91.0285745182818,0"
+                    Point2="-95.0285745182818,0"
+                    Point3="-95.0285745182818,4" />
+                  <mssgle:LineSegment
+                    End="-95.0285745182818,19.8764712638923" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-143.219961237032,-17.609375,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Lookup No Match Output]"
+          TopLeft="409.94286220317,272.388238822548">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="117.600002043588,34.2588243015912"
+              Start="0,0"
+              End="117.600002043588,26.7588243015912">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="113.600002043588,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="113.600002043588,0"
+                    Point2="117.600002043588,0"
+                    Point3="117.600002043588,4" />
+                  <mssgle:LineSegment
+                    End="117.600002043588,26.7588243015912" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="61.7936153248378,-17.609375,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Data Flow Task\OLE DB Command"
+          TopLeft="114.285716231989,383.882358324982" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output1]"
+          TopLeft="199.400001958438,341.36471008644">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.5176482385417"
+              Start="0,0"
+              End="0,35.0176482385417">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.0176482385417" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Data Flow Task\OLE DB Destination"
+          TopLeft="440.714293219606,387.70588779037" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output2]"
+          TopLeft="526.728578733182,348.247063124139">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.4588246662311"
+              Start="0,0"
+              End="0,31.9588246662311">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.9588246662311" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\SanPham_Stage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Lookup LoaiSanPham">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
