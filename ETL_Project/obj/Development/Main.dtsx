@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{C4BE7A52-4B61-4A7D-8D62-4D2DD6D6765A}">
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{52494415-EDF3-4ED4-B3B9-4931DD422904}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -21,7 +21,7 @@
       DTS:refId="Package\Source to stage"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
-      DTS:DTSID="{E56AE0F6-D73D-40D2-AAD9-D21708603730}"
+      DTS:DTSID="{0A5A3C96-3EB6-4DE7-8097-704D77767F76}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Source to stage"
@@ -30,10 +30,152 @@
       <DTS:ObjectData>
         <ExecutePackageTask>
           <UseProjectReference>True</UseProjectReference>
+          <PackageName>SourceToStage.dtsx</PackageName>
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Stage to NDS"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{5A19432B-000A-4CEE-97C1-8F1BB5F6528D}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Stage to NDS">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Stage to NDS\CuaHang_Stage to CuaHang_NDS"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{1769BF28-20CF-44E1-A2A2-A2D0EEFAECEF}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="CuaHang_Stage to CuaHang_NDS"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>CuaHang_StageToNDS.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Stage to NDS\KhachHang_Stage to KhachHang_NDS"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{91623F68-8DF4-4554-B2B2-CB67A22E6DD2}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="KhachHang_Stage to KhachHang_NDS"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>KhachHang_StageToNDS.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Stage to NDS\LoaiCH_Stage to LoaiCH_NDS"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{FABB026B-1A5A-41B2-B52F-3C12CF95275B}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="LoaiCH_Stage to LoaiCH_NDS"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>LoaiCuaHang_StageToNDS.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Stage to NDS\LoaiSanPham_Stage to LoaiSanPham_NDS"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{F0787301-5924-4BFC-ADAC-A668895ADE26}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="LoaiSanPham_Stage to LoaiSanPham_NDS"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>LoaiSanPham_StageToNDS.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Stage to NDS\Nuoc_Stage to Nuoc_NDS"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{A7A93048-6D85-484C-AD0A-985362DDA353}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Nuoc_Stage to Nuoc_NDS"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>Nuoc_StageToNDS.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Stage to NDS.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{71C6B6EA-6FE3-45A4-A948-87437992F811}"
+          DTS:From="Package\Stage to NDS\Nuoc_Stage to Nuoc_NDS"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Stage to NDS\KhachHang_Stage to KhachHang_NDS" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Stage to NDS.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{9693A2A0-9ECF-40E7-9045-FC9DD6F2ED83}"
+          DTS:From="Package\Stage to NDS\KhachHang_Stage to KhachHang_NDS"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Stage to NDS\LoaiCH_Stage to LoaiCH_NDS" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Stage to NDS.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{AC18E490-112D-4070-A97F-FF7C6F30D970}"
+          DTS:From="Package\Stage to NDS\LoaiCH_Stage to LoaiCH_NDS"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Stage to NDS\LoaiSanPham_Stage to LoaiSanPham_NDS" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Stage to NDS.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{06AA8A7A-8FB1-4F95-93E5-5DEA859D2375}"
+          DTS:From="Package\Stage to NDS\LoaiSanPham_Stage to LoaiSanPham_NDS"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\Stage to NDS\CuaHang_Stage to CuaHang_NDS" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{7E8D9FD5-A500-40C9-92D5-A2C948930463}"
+      DTS:From="Package\Source to stage"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Stage to NDS" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -45,11 +187,160 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="151.2,41.6"
+          Size="152,41.6"
           Id="Package\Source to stage"
-          TopLeft="207.499991754691,98.8000007851919" />
+          TopLeft="272.857147503872,84.1176482385419" />
+        <NodeLayout
+          Size="200.8,41.6"
+          Id="Package\Stage to NDS\Nuoc_Stage to Nuoc_NDS"
+          TopLeft="48.7714335709203,8.3764736340533" />
+        <NodeLayout
+          Size="260,41.6"
+          Id="Package\Stage to NDS\KhachHang_Stage to KhachHang_NDS"
+          TopLeft="22.2571467375272,74.0823566841008" />
+        <EdgeLayout
+          Id="Package\Stage to NDS.PrecedenceConstraints[Constraint]"
+          TopLeft="150.714290154224,49.9764736340533">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.1058830500475"
+              Start="0,0"
+              End="0,16.6058830500475">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.6058830500475" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="218.4,41.6"
+          Id="Package\Stage to NDS\LoaiCH_Stage to LoaiCH_NDS"
+          TopLeft="37.9714327194256,138.317651702624" />
+        <EdgeLayout
+          Id="Package\Stage to NDS.PrecedenceConstraints[Constraint 1]"
+          TopLeft="149.714289728476,115.682356684101">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,22.6352950185229"
+              Start="0,0"
+              End="0,15.1352950185229">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.1352950185229" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="182.4,41.6"
+          Id="Package\Stage to NDS\LoaiSanPham_Stage to LoaiSanPham_NDS"
+          TopLeft="63.6857188716228,209.435299758845" />
+        <EdgeLayout
+          Id="Package\Stage to NDS.PrecedenceConstraints[Constraint 2]"
+          TopLeft="151.028575795524,179.917651702624">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.5176480562216"
+              Start="0,0"
+              End="0,22.0176480562216">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.0176480562216" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="182.4,41.6"
+          Id="Package\Stage to NDS\CuaHang_Stage to CuaHang_NDS"
+          TopLeft="56.5428616071235,275.435300123486" />
+        <EdgeLayout
+          Id="Package\Stage to NDS.PrecedenceConstraints[Constraint 3]"
+          TopLeft="151.314290239373,251.035299758845">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.4000003646403"
+              Start="0,0"
+              End="0,16.9000003646403">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.9000003646403" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="317.6,381.6"
+          Size="317.6,424.8"
+          Id="Package\Stage to NDS"
+          TopLeft="205.714289217579,175.88235540786" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="348.857147503872,125.717648238542">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="15.6571417137072,50.1647071693182"
+              Start="0,0"
+              End="15.6571417137072,42.6647071693182">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.0823535846591" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.0823535846591"
+                    Point2="0,25.0823535846591"
+                    Point3="4,25.0823535846591" />
+                  <mssgle:LineSegment
+                    End="11.6571417137072,25.0823535846591" />
+                  <mssgle:CubicBezierSegment
+                    Point1="11.6571417137072,25.0823535846591"
+                    Point2="15.6571417137072,25.0823535846591"
+                    Point3="15.6571417137072,29.0823535846591" />
+                  <mssgle:LineSegment
+                    End="15.6571417137072,42.6647071693182" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
