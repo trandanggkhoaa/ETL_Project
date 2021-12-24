@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="8"
-  DTS:VersionGUID="{4244D33C-0D34-4823-9A29-0C75FBACA85A}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{5E54ECB4-C229-4CBB-B508-F010CED9AC72}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -455,9 +455,9 @@
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="True"
+          IsExpanded="False"
           PanelSize="332,587.2"
-          Size="332,630.4"
+          Size="332,43.2"
           Id="Package\Stage to NDS"
           TopLeft="205.714289217579,175.88235540786" />
         <EdgeLayout

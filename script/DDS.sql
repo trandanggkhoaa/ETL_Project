@@ -90,7 +90,7 @@ references [dbo].[Dim_Date] ([PK_Date])
 go
 alter table [Fact_DoanhThu] check  constraint [FK_F_Date]
 
-
+--------------------------------------------------------------------------------------------
 drop table Fact_DoanhThu
 drop table Dim_CuaHang
 drop table Dim_SanPham
